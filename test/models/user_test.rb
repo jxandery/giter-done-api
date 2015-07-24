@@ -14,4 +14,12 @@ class UserTest < ActiveSupport::TestCase
       assert_equal 17,       results[:following]
     end
   end
+
+  test 'returns user starred repos' do
+    VCR.use_cassette('user#starred_repo') do
+      results = User.starred_repos('jxandery')
+
+      assert_equal 2,  results.count
+    end
+  end
 end

@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
   def self.info(owner)
     service.info(owner)
   end
+
+  def self.starred_repos(owner)
+    service.starred_repos(owner)
+  end
 end

@@ -13,6 +13,10 @@ class GitService
     parse(connection.get("/users/#{name}"))
   end
 
+  def starred_repos(name)
+    parse(connection.get("/users/#{name}/starred"))
+  end
+
   private
 
   def parse(response)
