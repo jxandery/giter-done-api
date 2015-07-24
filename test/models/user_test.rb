@@ -22,4 +22,12 @@ class UserTest < ActiveSupport::TestCase
       assert_equal 2,  results.count
     end
   end
+
+  test 'returns user organizations' do
+    VCR.use_cassette('user#organizations') do
+      results = User.organizations('jxandery')
+
+      assert_equal 2,  results.count
+    end
+  end
 end
