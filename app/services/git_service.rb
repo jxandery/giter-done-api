@@ -9,6 +9,10 @@ class GitService
     parse(connection.get("/users/#{name}/repos"))
   end
 
+  def info(name)
+    parse(connection.get("/users/#{name}"))
+  end
+
   private
 
   def parse(response)

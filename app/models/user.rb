@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
 
+  def self.service
+    @service ||= GitService.new
+  end
+
   def self.find_or_create_from_oauth(oauth)
     user = User.find_or_create_by(provider: oauth.provider, uid: oauth.uid)
 
@@ -10,5 +14,9 @@ class User < ActiveRecord::Base
     user.save
 
     user
+  end
+
+  def self.info(owner)
+    service.info(owner)
   end
 end
