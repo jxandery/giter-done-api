@@ -27,7 +27,7 @@ class UserTest < ActiveSupport::TestCase
     VCR.use_cassette('user#organizations') do
       results = User.organizations('jxandery')
 
-      assert_equal 2,  results.count
+      assert_equal 1,  results.count
     end
   end
 end
