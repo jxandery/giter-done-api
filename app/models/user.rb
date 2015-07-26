@@ -24,7 +24,11 @@ class User < ActiveRecord::Base
     service.starred_repos(owner)
   end
 
-  def self.organizations(owner)
-    service.organizations(owner)
+  def self.organizations(token)
+    service.organizations(token)
+  end
+
+  def self.notifications(token)
+    service.notifications(token)
   end
 end

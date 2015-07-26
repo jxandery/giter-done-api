@@ -31,4 +31,14 @@ class UserTest < ActiveSupport::TestCase
       assert_equal 'turingschool',  results.first[:login]
     end
   end
+
+  test 'returns user notifications' do
+    VCR.use_cassette('user#notifications', :preserve_exact_body_bytes => true) do
+      results = User.notifications(ENV['auth_token'])
+
+      assert_equal 50,  results.count
+      assert_equal '90350426',  results.first[:id]
+      assert_equal 22358793,  results.first[:repository][:id]
+    end
+  end
 end

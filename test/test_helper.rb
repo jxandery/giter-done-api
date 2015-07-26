@@ -10,6 +10,7 @@ class ActiveSupport::TestCase
     config.cassette_library_dir = "fixtures/vcr_cassettes"
     config.hook_into :webmock # or :fakeweb
     config.default_cassette_options = { :serialize_with => :json }
+
     config.before_record do |r|
       r.request.headers.delete("Authorization")
     end

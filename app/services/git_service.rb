@@ -21,6 +21,10 @@ class GitService
     parse(connection.get("/user/orgs?access_token=#{token}"))
   end
 
+  def notifications(token)
+    parse(connection.get("/notifications?access_token=#{token}"))
+  end
+
   private
 
   def parse(response)
