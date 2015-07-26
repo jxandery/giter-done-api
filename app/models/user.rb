@@ -23,4 +23,8 @@ class User < ActiveRecord::Base
   def self.starred_repos(owner)
     service.starred_repos(owner)
   end
+
+  def self.organizations(owner)
+    service.organizations(owner)
+  end
 end

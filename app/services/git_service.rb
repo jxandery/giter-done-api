@@ -17,6 +17,10 @@ class GitService
     parse(connection.get("/users/#{name}/starred"))
   end
 
+  def organizations(token)
+    parse(connection.get("/user/orgs?access_token=#{token}"))
+  end
+
   private
 
   def parse(response)
