@@ -25,7 +25,7 @@ class UserTest < ActiveSupport::TestCase
 
   test 'returns user organizations' do
     VCR.use_cassette('user#organizations') do
-      results = User.organizations('2f8f3e03708e2dde409cda4f19da45c9a16508d2')
+      results = User.organizations(ENV['auth_token'])
 
       assert_equal 1,  results.count
       assert_equal 'turingschool',  results.first[:login]
