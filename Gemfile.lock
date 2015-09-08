@@ -190,7 +190,7 @@ DEPENDENCIES
   hurley
   jbuilder (~> 2.0)
   jquery-rails
-  omniauth-github
+  omniauth-github (~> 1.1.2)
   pg (~> 0.18.2)
   pry
   rails (= 4.2.0)
